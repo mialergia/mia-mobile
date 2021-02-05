@@ -1,0 +1,42 @@
+Pixel Perfect: 
+    settings: https://www.flaticon.com/free-icon/gear_889744?term=settings&page=1&position=1
+    add: https://www.flaticon.com/free-icon/plus_1828919?term=add%20button&page=1&position=1
+    leaf: https://www.flaticon.com/free-icon/leaf_892881?term=leaf&page=1&position=3
+    eye: https://www.flaticon.com/free-icon/visibility_633633?term=eye&page=1&position=10
+    hideEye: https://www.flaticon.com/free-icon/visibility_633655?term=eye&page=1&position=14
+
+Freepik:
+    tree: https://www.flaticon.com/free-icon/tree_3094965?term=tree&page=1&position=32
+    leaves: https://www.flaticon.com/free-icon/leaves_3094946?term=leaves&page=1&position=55
+    mushroom: https://www.flaticon.com/free-icon/mushroom_765591?term=mushroom&page=1&position=79
+    checkbox: https://www.flaticon.com/free-icon/checkbox_1287087?term=checkbox&page=1&position=10
+    close: https://www.flaticon.com/free-icon/cancel_748122
+    bell: https://www.flaticon.com/free-icon/notification_107822?term=notification&page=1&position=68
+    user: https://www.flaticon.com/free-icon/user-profile_14964?term=profile&page=1&position=47
+    info: https://www.flaticon.com/free-icon/info_785923?term=info&page=1&position=24
+    calendar: https://www.flaticon.com/free-icon/calendar_3176328?term=calendar&page=1&position=75
+    paperClip: https://www.flaticon.com/free-icon/paperclip_646148?term=paper%20clip&page=1&position=3
+    hand: https://www.flaticon.com/free-icon/customer_3593749?term=rate&page=1&position=82
+
+Freepik Stories:    
+    errorIllustration: https://stories.freepik.com/illustration/no-data/cuate
+    empty: https://stories.freepik.com/illustration/empty/pana
+
+Flat Icon:
+    rinitis: https://www.flaticon.es/icono-gratis/rinitis_2037981
+    cough: https://www.flaticon.es/icono-gratis/tos_2038003
+    eyes: https://www.flaticon.es/icono-gratis/eyelids_2038379
+    inhaler: https://www.flaticon.com/free-icon/bronchodilator_2037993?term=inhaler&page=1&position=81
+    signup: https://www.flaticon.com/free-icon/login_3190583#
+
+Roundicons:
+    back arrow: https://www.flaticon.com/free-icon/left-arrow_271220
+
+Eucalyp:
+    student: https://www.flaticon.com/free-icon/student_947497?term=student&page=2&position=95
+
+pongsakornRed:
+    exclamation: https://www.flaticon.com/free-icon/alert_975989?term=exclamation%20mark&page=1&position=10
+
+appIcon:
+    trees: https://www.flaticon.com/free-icon/trees_119580?term=joshua%20tree&page=1&position=61

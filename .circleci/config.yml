@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/tesis-alergias/react-native-alergias
+    environment:
+      CC_TEST_REPORTER_ID: 61a3188d5e43ddaabd2bc378538388dfbe4b91df4015bf5af41696852eb2c3cf
+    docker:
+      - image: circleci/node:10.14.2-browsers
+    steps:
+      - checkout:
+          path: ~/tesis-alergias
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - dependency-cache
+      - run:
+          name: Install dependencies
+          command: yarn
+      - run:
+          name: Run linter
+          command: yarn run lint
+
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - ~/.cache/yarn
