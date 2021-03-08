@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { arrayOf, func, number, shape, string } from 'prop-types';
-import { View, FlatList, Text, Switch, Alert } from 'react-native';
+import { View, FlatList, Text, Switch } from 'react-native';
 import { useStatus, LOADING } from '@rootstrap/redux-tools';
 import strings from 'locale';
 import { isEqual } from 'lodash';
@@ -10,6 +10,7 @@ import ErrorView from 'components/common/ErrorView';
 import Separator from 'components/common/Separator';
 import { updateUserInfo } from 'actions/userActions';
 import useForm from 'hooks/useForm';
+import { getGenericErrorAlert } from 'utils/helpers';
 import styles from './styles';
 
 const NotificationsForm = ({ notificationsList, initialData, onSubmit, askForPermission }) => {
@@ -44,11 +45,7 @@ const NotificationsForm = ({ notificationsList, initialData, onSubmit, askForPer
           handleValueChange(id, isChecked);
         }
       } catch (err) {
-        Alert.alert(strings.COMMON.error, strings.DIARY_ENTRY.currentLocationError, [
-          strings.COMMON.error,
-          strings.COMMON.somethingWentWrong,
-          { text: strings.COMMON.accept },
-        ]);
+        getGenericErrorAlert();
       }
     },
     [askForPermission, handleValueChange],
