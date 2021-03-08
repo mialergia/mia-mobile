@@ -68,7 +68,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Permitir lectura de tu ubicación actual</string>
+	<string>Tendremos en cuenta tu ubicación para relacionarla con síntomas recurrentes</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Tendremos en cuenta tu ubicación para relacionarla con síntomas recurrentes</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

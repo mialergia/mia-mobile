@@ -49,9 +49,11 @@ const DiaryForm = ({ onSubmit }) => {
       />
       <Text style={styles.title}>{strings.DIARY_ENTRY.otherComment}</Text>
       <Input
-        inputStyle={styles.otherComment}
+        inputContainerStyle={styles.otherCommentContainer}
+        inputStyle={styles.otherCommentInput}
         multiline
         blurOnSubmit
+        height={250}
         {...inputProps(FIELDS.comment)}
       />
       <CurrentLocation inputName={FIELDS.coordinates} handleValueChange={handleValueChange} />

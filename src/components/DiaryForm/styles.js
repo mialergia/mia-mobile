@@ -14,11 +14,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginTop: 30,
   },
-  otherComment: {
-    alignItems: 'flex-start',
+  otherCommentContainer: {
     height: 250,
     paddingTop: 25,
     paddingRight: 17,
+  },
+  otherCommentInput: {
+    textAlignVertical: 'top',
+    height: 250,
   },
   button: {
     marginTop: 40,

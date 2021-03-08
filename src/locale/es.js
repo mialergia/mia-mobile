@@ -15,6 +15,7 @@ export default {
     accept: 'Aceptar',
     suggestion: 'Sugerencia',
     save: 'Guardar',
+    openSettings: 'Abrir ajustes',
   },
 
   LOG_IN: {
@@ -126,7 +127,8 @@ export default {
 
   DIARY_ENTRY: {
     currentLocation: 'Agregar ubicación actual',
-    currentLocationError: 'Debe activar el uso de ubicación para usar esta opción.',
+    currentLocationError:
+      'La ubicación ha sido desactivada anteriormente. Por favor, dirígete a ajustes para activarla.',
     dateQuestion: '¿En qué fecha ocurrieron los síntomas?',
     otherComment: '¿Querés agregar algún otro comentario?',
     dateInput: 'Fecha',
