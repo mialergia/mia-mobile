@@ -7,4 +7,7 @@ export default {
   fechaNacimiento: {
     presence: { message: strings.VALIDATION.dateOfBirthPresence },
   },
+  departamento: {
+    presence: { message: strings.VALIDATION.departmentPresence },
+  },
 };
