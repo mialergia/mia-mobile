@@ -16,6 +16,7 @@ export default {
     suggestion: 'Sugerencia',
     save: 'Guardar',
     openSettings: 'Abrir ajustes',
+    emptyFieldError: '{0} no puede ser vacío.',
   },
 
   LOG_IN: {
@@ -86,6 +87,7 @@ export default {
     dateOfBirthPresence: '^La fecha de nacimiento no puede ser vacía',
     datePresence: '^Debe agregar una fecha',
     passwordsEquality: '^Las contraseñas no coinciden',
+    departmentPresence: '^El departamento no puede ser vacío',
   },
 
   POLLEN_CIRCLE: {
