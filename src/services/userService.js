@@ -16,6 +16,10 @@ class UserService {
   resetPassword(email) {
     return httpClient.post('/password/reset/', email);
   }
+
+  resendVerificationEmail(email) {
+    return httpClient.post('/users/resend-verification-email/', email);
+  }
 }
 
 export default new UserService();

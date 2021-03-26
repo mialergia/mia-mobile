@@ -49,6 +49,14 @@ export const resetPassword = createThunk('RESET_PASWWORD', async email => {
   }
 });
 
+export const resendVerificationEmail = createThunk('RESEND_VERIFICATION_EMAIL', async email => {
+  try {
+    await userService.resendVerificationEmail(email);
+  } catch (response) {
+    throw parseError(response);
+  }
+});
+
 export const updateSession = createAction('UPDATE_SESSION');
 export const updateUser = createAction('UPDATE_USER');
 export const setOneSignalId = createAction('SET_ONESIGNAL_ID');
