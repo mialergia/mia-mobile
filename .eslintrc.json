@@ -79,7 +79,8 @@
       {
         "ignoredNodes": [
           "TemplateLiteral"
-        ]
+        ],
+        "SwitchCase": 1
       }
     ],
     "max-len": 0,

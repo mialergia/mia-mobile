@@ -2,6 +2,7 @@ import { Alert } from 'react-native';
 import queryString from 'query-string';
 import { groupBy } from 'lodash';
 import strings from 'locale';
+import { check, request, RESULTS, openSettings } from 'react-native-permissions';
 
 import rinitisIcon from 'images/rinitis.png';
 import coughIcon from 'images/cough.png';
@@ -286,4 +287,38 @@ export const getGenericErrorAlert = () => {
   Alert.alert(strings.COMMON.error, strings.COMMON.errorDescription, [
     { text: strings.COMMON.accept },
   ]);
+};
+
+export const askForPermission = async (permissionPath, onGranted, errorDescription) => {
+  const getPermissionStatus = async () => {
+    let permissionStatus = await check(permissionPath);
+
+    if (permissionStatus === RESULTS.DENIED) {
+      permissionStatus = await request(permissionPath);
+    }
+
+    return permissionStatus;
+  };
+
+  const isLocationAllowed = await getPermissionStatus();
+
+  switch (isLocationAllowed) {
+    case RESULTS.DENIED:
+    case RESULTS.BLOCKED: {
+      Alert.alert(strings.COMMON.error, errorDescription, [
+        { text: strings.COMMON.cancel },
+        { text: strings.COMMON.openSettings, onPress: openSettings },
+      ]);
+      break;
+    }
+    case RESULTS.LIMITED:
+    case RESULTS.GRANTED: {
+      onGranted();
+      break;
+    }
+    default: {
+      getGenericErrorAlert();
+      break;
+    }
+  }
 };
