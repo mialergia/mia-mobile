@@ -3,7 +3,12 @@ import { Alert, Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { SafeAreaView } from 'react-navigation';
 import strings from 'locale';
-import { checkNotifications, requestNotifications } from 'react-native-permissions';
+import {
+  checkNotifications,
+  openSettings,
+  requestNotifications,
+  RESULTS,
+} from 'react-native-permissions';
 
 import NotificationsForm from 'components/NotificationsForm';
 import BackButton from 'components/common/BackButton';
@@ -36,15 +41,18 @@ const NotificationsScreen = () => {
 
   const askForPermission = () => {
     return checkNotifications().then(({ status }) => {
-      if (status === 'denied') {
+      if (status === RESULTS.DENIED) {
         requestNotifications(['alert', 'sound']);
       }
 
-      if (status === 'blocked') {
+      if (status === RESULTS.BLOCKED) {
         Alert.alert(
           strings.SETTINGS_SCREEN.notificationsBlockedTitle,
           strings.SETTINGS_SCREEN.notificationsBlockedBody,
-          [{ text: strings.COMMON.accept }],
+          [
+            { text: strings.COMMON.cancel },
+            { text: strings.COMMON.openSettings, onPress: openSettings },
+          ],
         );
       }
       return status;

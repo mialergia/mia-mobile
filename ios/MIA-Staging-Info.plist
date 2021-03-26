@@ -50,8 +50,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Tendremos en cuenta tu ubicación para relacionarla con síntomas recurrentes</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Tendremos en cuenta tu ubicación para relacionarla con síntomas recurrentes</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Tendremos en cuenta tu ubicación para relacionarla con síntomas recurrentes</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialIcons.ttf</string>

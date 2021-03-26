@@ -1,21 +1,26 @@
 import React, { useState, memo } from 'react';
-import { Alert } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
+import { PERMISSIONS } from 'react-native-permissions';
 
 import SelectInput from 'components/common/SelectInput';
 import { BACKGROUND_COLOR, DARK_GREY } from 'constants/styles';
 import strings from 'locale';
 import { isIos } from 'constants/app';
 import { func, string } from 'prop-types';
+import { askForPermission, getGenericErrorAlert } from 'utils/helpers';
 
 Geolocation.setRNConfiguration({
   authorizationLevel: 'whenInUse',
 });
 
+const PERMISSION_PATH = isIos
+  ? PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
+  : PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION;
+
 const CurrentLocation = ({ handleValueChange, inputName }) => {
   const [allowLocation, setAllowLocation] = useState(false);
 
-  const onPositionChange = ({ longitude, latitude }) => {
+  const setCurrentPosition = ({ longitude, latitude }) => {
     const coordinates =
       longitude && latitude
         ? {
@@ -27,32 +32,30 @@ const CurrentLocation = ({ handleValueChange, inputName }) => {
     handleValueChange([inputName], coordinates);
   };
 
-  const handleError = error => {
-    onPositionChange({});
-
-    if (error.PERMISSION_DENIED === 1) {
-      Alert.alert(strings.COMMON.error, strings.DIARY_ENTRY.currentLocationError, [
-        {
-          text: strings.COMMON.accept,
-          onPress: () => {
-            setAllowLocation(false);
-          },
+  const getCurrentPosition = async isChecked => {
+    setAllowLocation(isChecked);
+    if (isChecked) {
+      await Geolocation.getCurrentPosition(
+        ({ coords }) => {
+          setCurrentPosition(coords);
         },
-      ]);
+        getGenericErrorAlert,
+        {
+          timeout: 2000,
+          maximumAge: 3600000,
+        },
+      );
+    } else {
+      setCurrentPosition({});
     }
   };
 
   const onPress = isChecked => {
-    isIos && Geolocation.requestAuthorization();
-
-    setAllowLocation(isChecked);
-    if (isChecked) {
-      Geolocation.getCurrentPosition(({ coords }) => {
-        onPositionChange(coords);
-      }, handleError);
-    } else {
-      onPositionChange({});
-    }
+    askForPermission(
+      PERMISSION_PATH,
+      () => getCurrentPosition(isChecked),
+      strings.DIARY_ENTRY.currentLocationError,
+    );
   };
 
   return (
