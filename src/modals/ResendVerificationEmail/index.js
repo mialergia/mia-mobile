@@ -1,19 +1,21 @@
-import React, { memo, useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import strings from 'locale';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { string } from 'prop-types';
+import { SUCCESS, useStatus } from '@rootstrap/redux-tools';
+import { object, string } from 'prop-types';
 
 import DeepLink from 'components/DeepLink';
-import { resetPassword } from 'actions/userActions';
+import { resendVerificationEmail } from 'actions/userActions';
 import EmailForm from 'components/EmailForm';
-import useResetPassword from 'hooks/useResetPassword';
 import CloseButton from 'components/common/CloseButton';
+import { EMAIL_SENT_MODAL } from 'constants/screens';
 import { routeShape } from 'constants/shapes';
 import styles from './styles';
 
-const ResetPasswordModal = ({
+const ResendVerificationEmail = ({
+  navigation,
   route: {
     params: { emailAdded },
   },
@@ -21,12 +23,23 @@ const ResetPasswordModal = ({
   const [email, setEmail] = useState({});
 
   const dispatch = useDispatch();
-  useResetPassword(email);
+  const { status } = useStatus(resendVerificationEmail);
+
+  useEffect(() => {
+    if (status === SUCCESS) {
+      navigation.goBack();
+      navigation.navigate(EMAIL_SENT_MODAL, {
+        ...email,
+        actionText: strings.SIGN_UP.emailAction,
+      });
+      return () => dispatch(resendVerificationEmail.reset());
+    }
+  }, [dispatch, email, navigation, status]);
 
   const onSubmit = useCallback(
     email => {
       setEmail(email);
-      dispatch(resetPassword(email));
+      dispatch(resendVerificationEmail(email));
     },
     [dispatch],
   );
@@ -38,22 +51,24 @@ const ResetPasswordModal = ({
       <View style={styles.container}>
         <DeepLink />
         <CloseButton containerStyle={styles.closeButton} />
-        <Text style={styles.title}>{strings.RESET_PASSWORD.title}</Text>
+        <Text style={styles.title}>{strings.RESEND_VERIFICATION_EMAIL.title}</Text>
         <EmailForm
           onSubmit={onSubmit}
-          buttonTitle={strings.RESET_PASSWORD.button}
+          buttonTitle={strings.RESEND_VERIFICATION_EMAIL.button}
           emailAdded={emailAdded}
-          action={resetPassword}
+          action={resendVerificationEmail}
         />
       </View>
     </KeyboardAwareScrollView>
   );
 };
 
-ResetPasswordModal.propTypes = {
+ResendVerificationEmail.propTypes = {
+  navigation: object.isRequired,
+  emailAdded: string,
   route: routeShape({
     emailAdded: string,
   }),
 };
 
-export default memo(ResetPasswordModal);
+export default ResendVerificationEmail;

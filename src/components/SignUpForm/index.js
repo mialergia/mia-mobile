@@ -2,6 +2,7 @@ import React from 'react';
 import { func } from 'prop-types';
 import { View } from 'react-native';
 import { useStatus, LOADING } from '@rootstrap/redux-tools';
+import { useNavigation } from '@react-navigation/native';
 
 import { signUp } from 'actions/userActions';
 import Input from 'components/common/Input';
@@ -12,6 +13,8 @@ import useTextInputProps from 'hooks/useTextInputProps';
 import signUpValidations from 'validations/signUpValidations';
 import ErrorView from 'components/common/ErrorView';
 import Button from 'components/common/Button';
+import LinkText from 'components/common/LinkText';
+import { RESEND_VERIFICATION_EMAIL } from 'constants/screens';
 import styles, { buttonContainerStyle } from './styles';
 
 const FIELDS = {
@@ -21,6 +24,7 @@ const FIELDS = {
 };
 
 const SignUpForm = ({ onSubmit }) => {
+  const navigation = useNavigation();
   const { error, status } = useStatus(signUp);
   const validator = useValidation(signUpValidations);
   const { values, errors, handleValueChange, handleSubmit, handleBlur } = useForm(
@@ -58,6 +62,13 @@ const SignUpForm = ({ onSubmit }) => {
           secureTextEntry
           testID="confirm-password-input"
           {...inputProps(FIELDS.password2)}
+        />
+        <LinkText
+          onPress={() =>
+            navigation.navigate(RESEND_VERIFICATION_EMAIL, { emailAdded: values[FIELDS.email] })
+          }
+          text={strings.SIGN_UP.resendEmail}
+          containerStyle={styles.resendEmail}
         />
       </View>
       <View>
