@@ -23,6 +23,7 @@ const PersonalInfo = ({ route: { params: { fromOnboarding = false } = {} } }) =>
     allergies: { all, filteredAllergies },
     error,
     user,
+    onesignalPlayerId,
   } = usePersonalInfo(fromOnboarding);
 
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ const PersonalInfo = ({ route: { params: { fromOnboarding = false } = {} } }) =>
         departamento,
         barrio: departamento === capital ? barrio : '',
         alergias: getUserAllergies(alergias, all),
+        onesignalPlayerId,
       }),
     );
   };

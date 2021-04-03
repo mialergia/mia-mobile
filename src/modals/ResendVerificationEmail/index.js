@@ -31,6 +31,7 @@ const ResendVerificationEmail = ({
       navigation.navigate(EMAIL_SENT_MODAL, {
         ...email,
         actionText: strings.SIGN_UP.emailAction,
+        resendAction: resendVerificationEmail,
       });
       return () => dispatch(resendVerificationEmail.reset());
     }

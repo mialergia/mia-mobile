@@ -81,5 +81,7 @@
 		<string>szn-mapy</string>
 		<string>mapsme</string>
 	</array>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

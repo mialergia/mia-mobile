@@ -13,7 +13,7 @@ import useSession from './useSession';
 export default fromOnboarding => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const { user } = useSession();
+  const { user, onesignalPlayerId } = useSession();
   const { status } = useStatus(updateUserInfo);
 
   useEffect(() => {
@@ -43,6 +43,7 @@ export default fromOnboarding => {
       fechaNacimiento: fechaNacimiento ? changeToFrontendFormat(fechaNacimiento) : null,
       alergias: filterUserAllergies(alergias, allergies.all),
     },
+    onesignalPlayerId,
     error,
   };
 };

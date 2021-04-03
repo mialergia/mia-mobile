@@ -36,8 +36,8 @@ android {
         applicationId "com.mia"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "1.2"
+        versionCode 13
+        versionName "1.3"
         resValue "string", "build_config_package", "com.mia"
         multiDexEnabled true 
     }
