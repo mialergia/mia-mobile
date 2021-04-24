@@ -14,7 +14,7 @@ const useLogin = () => {
 
   useEffect(() => {
     if (status === SUCCESS) {
-      dispatch(updateUserInfo({ ...user, onesignalPlayerId }));
+      !user.necesitaOnboarding && dispatch(updateUserInfo({ ...user, onesignalPlayerId }));
       return () => dispatch(login.reset());
     }
   }, [dispatch, onesignalPlayerId, status]);
