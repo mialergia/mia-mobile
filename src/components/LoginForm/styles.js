@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { PIXEL_HEIGHT } from 'constants/app';
 
 const styles = StyleSheet.create({

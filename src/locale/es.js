@@ -17,6 +17,7 @@ export default {
     save: 'Guardar',
     openSettings: 'Abrir ajustes',
     emptyFieldError: '{0} no puede ser vacío.',
+    email: 'Email',
   },
 
   LOG_IN: {
@@ -65,6 +66,7 @@ export default {
     emailSentTitle: 'Mail enviado',
     emailSent: 'Te enviamos un mail a \n',
     emailSentDescription: 'Por favor, revisá tu correo electrónico para poder ',
+    resend: 'Reenviar mail',
   },
 
   SIGN_UP: {
@@ -76,6 +78,7 @@ export default {
     signUpButton: 'Registrarme',
     emailAction: 'confirmar tu cuenta.',
     termsAndConditionsTitle: 'Sobre el proyecto',
+    resendEmail: 'Reenviar mail de verificación',
   },
 
   VALIDATION: {
@@ -142,9 +145,13 @@ export default {
   },
 
   RESET_PASSWORD: {
-    email: 'Email',
     button: 'Cambiar contraseña',
     title: 'Ingresá tu mail para cambiar tu contraseña',
     emailAction: 'cambiar tu contraseña.',
+  },
+
+  RESEND_VERIFICATION_EMAIL: {
+    button: 'Reenviar',
+    title: 'Reenviar mail de verificación al siguiente correo:',
   },
 };

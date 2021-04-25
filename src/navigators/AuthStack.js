@@ -8,6 +8,7 @@ import {
   SIGN_UP_SCREEN,
   RESET_PASSWORD_MODAL,
   TERMS_AND_CONDITIONS,
+  RESEND_VERIFICATION_EMAIL,
 } from 'constants/screens';
 
 import LoginScreen from 'screens/LoginScreen';
@@ -16,6 +17,7 @@ import { WHITE } from 'constants/styles';
 import EmailSentModal from 'screens/EmailSentModal';
 import ResetPasswordModal from 'modals/ResetPasswordModal';
 import TermsAndConditions from 'components/common/TermsAndConditions';
+import ResendVerificationEmail from 'modals/ResendVerificationEmail';
 
 const Stack = createStackNavigator();
 
@@ -36,6 +38,7 @@ const RootAuthStack = () => (
     <RootStack.Screen name={EMAIL_SENT_MODAL} component={EmailSentModal} />
     <RootStack.Screen name={RESET_PASSWORD_MODAL} component={ResetPasswordModal} />
     <RootStack.Screen name={TERMS_AND_CONDITIONS} component={TermsAndConditions} />
+    <RootStack.Screen name={RESEND_VERIFICATION_EMAIL} component={ResendVerificationEmail} />
   </RootStack.Navigator>
 );
 
