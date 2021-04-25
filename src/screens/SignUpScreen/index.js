@@ -10,14 +10,16 @@ import SignUpForm from 'components/SignUpForm';
 import appIcon from 'images/signup.png';
 import headerImage from 'images/header.png';
 import Button from 'components/common/Button';
+import ErrorView from 'components/common/ErrorView';
 import { EMAIL_SENT_MODAL, LOGIN_SCREEN, TERMS_AND_CONDITIONS } from 'constants/screens';
 import DeepLink from 'components/DeepLink';
-import { signUp } from 'actions/userActions';
+import { resendVerificationEmail, signUp } from 'actions/userActions';
 import styles from './styles';
 
 const SignUpScreen = memo(({ navigation }) => {
   const dispatch = useDispatch();
   const { status } = useStatus(signUp);
+  const { error } = useStatus(resendVerificationEmail);
   const [email, setEmail] = useState('');
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const SignUpScreen = memo(({ navigation }) => {
           dispatch(signUp.reset());
           navigation.goBack();
         },
+        resendAction: resendVerificationEmail,
       });
     }
   }, [dispatch, email, navigation, status]);
@@ -60,6 +63,7 @@ const SignUpScreen = memo(({ navigation }) => {
               inverseStyle
               containerStyle={styles.buttonContainer}
             />
+            {error && <ErrorView errors={{ error: strings.COMMON.somethingWentWrong }} />}
           </View>
         </KeyboardAwareScrollView>
       </SafeAreaView>

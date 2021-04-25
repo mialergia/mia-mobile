@@ -4,9 +4,9 @@ import { string } from 'prop-types';
 
 import styles from './styles';
 
-const Loading = ({ color, containerStyle }) => (
+const Loading = ({ color, containerStyle, ...props }) => (
   <View style={[styles.container, containerStyle]}>
-    <ActivityIndicator color={color} size="large" />
+    <ActivityIndicator color={color} size="large" {...props} />
   </View>
 );
 

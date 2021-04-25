@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+
 import { SHADOW, WHITE } from 'constants/styles';
 import { PIXEL_HEIGHT } from 'constants/app';
 
@@ -35,6 +36,13 @@ const styles = StyleSheet.create({
   },
   mail: {
     fontWeight: '700',
+  },
+  resendEmail: {
+    marginBottom: 10,
+  },
+  loader: {
+    marginBottom: 15,
+    marginTop: 10,
   },
 });
 

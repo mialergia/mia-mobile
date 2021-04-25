@@ -16,6 +16,9 @@ const styles = StyleSheet.create({
     marginHorizontal: '8%',
     justifyContent: 'space-between',
   },
+  resendEmail: {
+    marginTop: 15,
+  },
 });
 
 export default styles;

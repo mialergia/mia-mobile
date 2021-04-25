@@ -1,13 +1,13 @@
 import React from 'react';
 import { func, string } from 'prop-types';
-import { Text } from 'react-native';
+import { Text, ViewPropTypes } from 'react-native';
 
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
 
-const LinkText = ({ onPress, text }) => {
+const LinkText = ({ onPress, text, containerStyle }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity style={containerStyle} onPress={onPress}>
       <Text style={styles.linkText}>{text}</Text>
     </TouchableOpacity>
   );
@@ -16,6 +16,7 @@ const LinkText = ({ onPress, text }) => {
 LinkText.propTypes = {
   onPress: func.isRequired,
   text: string.isRequired,
+  containerStyle: ViewPropTypes.style,
 };
 
 export default LinkText;

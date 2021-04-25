@@ -54,7 +54,9 @@ const LoginForm = ({ onSubmit }) => {
       />
       <ErrorView errors={{ ...errors, error }} />
       <LinkText
-        onPress={() => navigation.navigate(RESET_PASSWORD_MODAL)}
+        onPress={() =>
+          navigation.navigate(RESET_PASSWORD_MODAL, { emailAdded: values[FIELDS.email] })
+        }
         text={strings.LOG_IN.resetPasswordButton}
       />
       <Button

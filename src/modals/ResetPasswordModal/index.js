@@ -3,15 +3,21 @@ import { Text, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import strings from 'locale';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { string } from 'prop-types';
 
 import DeepLink from 'components/DeepLink';
 import { resetPassword } from 'actions/userActions';
-import ResetPasswordForm from 'components/ResetPasswordForm';
+import EmailForm from 'components/EmailForm';
 import useResetPassword from 'hooks/useResetPassword';
 import CloseButton from 'components/common/CloseButton';
+import { routeShape } from 'constants/shapes';
 import styles from './styles';
 
-const ResetPasswordModal = () => {
+const ResetPasswordModal = ({
+  route: {
+    params: { emailAdded },
+  },
+}) => {
   const [email, setEmail] = useState({});
 
   const dispatch = useDispatch();
@@ -33,10 +39,21 @@ const ResetPasswordModal = () => {
         <DeepLink />
         <CloseButton containerStyle={styles.closeButton} />
         <Text style={styles.title}>{strings.RESET_PASSWORD.title}</Text>
-        <ResetPasswordForm onSubmit={onSubmit} />
+        <EmailForm
+          onSubmit={onSubmit}
+          buttonTitle={strings.RESET_PASSWORD.button}
+          emailAdded={emailAdded}
+          action={resetPassword}
+        />
       </View>
     </KeyboardAwareScrollView>
   );
+};
+
+ResetPasswordModal.propTypes = {
+  route: routeShape({
+    emailAdded: string,
+  }),
 };
 
 export default memo(ResetPasswordModal);
