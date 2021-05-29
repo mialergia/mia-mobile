@@ -30,8 +30,8 @@ export default {
   },
 
   POLLEN_SCREEN: {
-    logout: 'Cerrar sesión',
-    headerTitle: 'Último reporte:\n{0}',
+    headerTitle: 'Último reporte',
+    location: 'Montevideo, Uruguay',
   },
 
   MAP_SCREEN: {
@@ -94,8 +94,7 @@ export default {
   },
 
   POLLEN_CIRCLE: {
-    buttonTitle: '+ INFO',
-    treesTitle: 'Pólenes  de árboles y arbustos',
+    treesTitle: 'Pólenes de árboles y arbustos',
     grassTitle: 'Polen de hierbas',
     mushroomTitle: 'Esporas de hongos',
     nivel: 'Nivel ',
@@ -131,6 +130,7 @@ export default {
   },
 
   DIARY_ENTRY: {
+    headerTitle: 'Diario de síntomas',
     currentLocation: 'Agregar ubicación actual',
     currentLocationError:
       'La ubicación ha sido desactivada anteriormente. Por favor, dirígete a ajustes para activarla.',
