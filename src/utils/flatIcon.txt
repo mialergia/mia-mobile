@@ -27,7 +27,7 @@ Flat Icon:
     cough: https://www.flaticon.es/icono-gratis/tos_2038003
     eyes: https://www.flaticon.es/icono-gratis/eyelids_2038379
     inhaler: https://www.flaticon.com/free-icon/bronchodilator_2037993?term=inhaler&page=1&position=81
-    signup: https://www.flaticon.com/free-icon/login_3190583#
+    signup: https://www.flaticon.com/free-icon/user_1077012?term=person&page=1&position=18&page=1&position=18&related_id=1077012&origin=search
 
 Roundicons:
     back arrow: https://www.flaticon.com/free-icon/left-arrow_271220
