@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, SafeAreaView, View, ViewPropTypes, StatusBar } from 'react-native';
+import { Image, Text, SafeAreaView, View, ViewPropTypes } from 'react-native';
 import { string, node, bool } from 'prop-types';
 
 import BackButton from 'components/common/BackButton';
@@ -20,7 +20,6 @@ const Header = ({
   return (
     <>
       <SafeAreaView style={[styles.safeArea, containerStyle]}>
-        <StatusBar backgroundColor={backgroundColor} />
         {!!backButton && <BackButton containerStyle={styles.backButton} arrowColor={arrowColor} />}
         <View style={styles.container}>
           <Text style={[styles.title, textStyle]}>{title}</Text>
