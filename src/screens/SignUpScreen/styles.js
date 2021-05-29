@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   appIcon: {
     alignSelf: 'center',
     height: '23%',
-    marginTop: '15%',
+    marginTop: '10%',
   },
 
   buttonContainer: {
