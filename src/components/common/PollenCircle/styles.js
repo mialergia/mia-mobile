@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     marginLeft: 80,
   },
 
@@ -31,11 +31,9 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     marginLeft: 10,
-    height: 70,
+    height: 35,
     width: 70,
-    marginTop: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: 70,
   },
 
   buttonText: {

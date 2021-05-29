@@ -3,7 +3,7 @@ import { View, Text, FlatList } from 'react-native';
 import { object } from 'prop-types';
 import strings from 'locale';
 
-import Header from 'components/common/AnimatedHeader';
+import Header from 'components/common/Header';
 import Button from 'components/common/Button';
 import { SYMPTOMS_SURVEY } from 'constants/screens';
 import DiaryButton from 'components/common/DiaryButton';
@@ -41,7 +41,7 @@ const SymptomsScreen = ({ navigation }) => {
 
   return (
     <>
-      <Header title={strings.DIARY_ENTRY.headerTitle} />
+      <Header title="Diario de síntomas" backButton={false} textStyle={styles.headerText} />
       <View style={styles.container}>
         {diaryEntries.length ? (
           <FlatList
