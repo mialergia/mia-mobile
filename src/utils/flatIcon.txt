@@ -40,6 +40,3 @@ pongsakornRed:
 
 appIcon:
     trees: https://www.flaticon.com/free-icon/trees_119580?term=joshua%20tree&page=1&position=61
-
-DinosoftLabs:
-    mapPoint: https://www.flaticon.com/free-icon/map-point_3210042?term=map%20point&page=1&position=15&page=1&position=15&related_id=3210042&origin=search

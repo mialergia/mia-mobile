@@ -15,7 +15,7 @@ applyDefaultInterceptors(store, httpClient);
 
 const App = () => (
   <>
-    <StatusBar translucent backgroundColor="transparent" barStyle="light-content" />
+    <StatusBar barStyle="dark-content" />
     <Provider store={store}>
       <PersistGate loading={<ActivityIndicator />} persistor={persistor}>
         <Navigation />

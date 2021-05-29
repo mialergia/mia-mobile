@@ -56,8 +56,8 @@ export const SHADOW = {
   shadowColor: LIGHT_GREY,
   shadowOpacity: 5,
   elevation: 1,
-  shadowRadius: 16,
-  shadowOffset: { width: 0, height: 4 },
+  shadowRadius: 3,
+  shadowOffset: { width: 4, height: 4 },
 };
 
 export const TOP_SHADOW = {

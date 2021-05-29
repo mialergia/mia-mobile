@@ -4,7 +4,7 @@ import { string, shape, object } from 'prop-types';
 import strings from 'locale';
 
 import { getLevelColor, getGroupTitle } from 'utils/helpers';
-import Header from 'components/common/AnimatedHeader';
+import Header from 'components/common/Header';
 import paperClipIcon from 'images/paperClip.png';
 import usePollenDetails from 'hooks/usePollenDetails';
 import Loading from 'components/common/Loading';
@@ -30,12 +30,7 @@ const PollenDetailsScreen = ({
     <Loading />
   ) : (
     <>
-      <Header
-        title={getGroupTitle(tipo).title}
-        textStyle={styles.headerText}
-        arrowColor={WHITE}
-        backButton
-      />
+      <Header title={getGroupTitle(tipo).title} textStyle={styles.headerText} arrowColor={WHITE} />
       <ScrollView contentContainerStyle={styles.container}>
         {reports.niveles?.map(({ nombreComun, nivel, id, pdfUrl }) => {
           const level = nivel;

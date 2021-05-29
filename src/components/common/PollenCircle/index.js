@@ -1,16 +1,16 @@
 import React, { useMemo } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import ProgressCircle from 'react-native-progress-circle';
 import { useNavigation } from '@react-navigation/native';
 
 import strings from 'locale';
-import arrowButton from 'images/arrowButton.png';
-import Separator from 'components/common/Separator';
-import { getLevelColor, getGroupTitle } from 'utils/helpers';
-import { POLLEN_DETAIL_SCREEN } from 'constants/screens';
 import { pollenShape } from 'constants/shapes';
 import { LIGHT_GREY, WHITE } from 'constants/styles';
+import { getLevelColor, getGroupTitle } from 'utils/helpers';
+import { POLLEN_DETAIL_SCREEN } from 'constants/screens';
 import styles from './styles';
+import Button from '../Button';
+import Separator from '../Separator';
 
 const PollenCircle = ({ pollen: { id, name, nivel } }) => {
   const navigation = useNavigation();
@@ -38,9 +38,13 @@ const PollenCircle = ({ pollen: { id, name, nivel } }) => {
           bgColor={WHITE}>
           <Image source={icon} />
         </ProgressCircle>
-        <TouchableOpacity style={styles.buttonContainer} onPress={onButtonPress}>
-          <Image source={arrowButton} />
-        </TouchableOpacity>
+        <Button
+          title={strings.POLLEN_CIRCLE.buttonTitle}
+          inverseStyle
+          containerStyle={styles.buttonContainer}
+          textStyle={styles.buttonText}
+          onPress={onButtonPress}
+        />
       </View>
       <Text style={styles.description}>{strings.POLLEN_CIRCLE.nivel + level}</Text>
       <Separator containerStyle={styles.separator} />
