@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     color: WHITE,
     fontWeight: 'bold',
     fontSize: 27,
-    paddingTop: '5%',
+    paddingTop: '10%',
     textAlign: 'center',
   },
 
@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
   appIcon: {
     alignSelf: 'center',
     height: PIXEL_HEIGHT * 0.25,
-    marginTop: '7%',
   },
 
   buttonContainer: {

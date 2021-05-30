@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { SafeAreaView } from 'react-navigation';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import settingsIcon from 'images/settings.png';
 import addIcon from 'images/add.png';
@@ -35,7 +35,7 @@ const TabNavigator = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container} forceInset={{ top: 'never' }}>
+    <SafeAreaView style={styles.container} edges={['bottom']}>
       <Tab.Navigator
         screenOptions={({ route }) => ({ tabBarIcon: () => getTabBarIcon(route.name) })}
         tabBarOptions={{
