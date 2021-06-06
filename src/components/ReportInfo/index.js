@@ -18,7 +18,7 @@ const ReportInfo = ({ scrollY, date, alert: { warningMessage, nivel } = {} }) =>
   });
 
   const opacity = scrollY.interpolate({
-    inputRange: [0, ANIMATED_HEADER_HEIGHT],
+    inputRange: [0, 10],
     outputRange: [1, 0],
     extrapolate: 'clamp',
   });
