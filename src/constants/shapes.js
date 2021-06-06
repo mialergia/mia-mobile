@@ -53,6 +53,6 @@ export const userShape = shape({
 });
 
 export const alertShape = shape({
-  warningMessage: string.isRequired,
+  warningMessage: string,
   nivel: string.isRequired,
 });
