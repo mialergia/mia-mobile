@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 27,
     textAlign: 'center',
+    marginTop: '10%',
   },
 
   headerImage: {
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
   appIcon: {
     alignSelf: 'center',
     height: '23%',
-    marginTop: '15%',
+    marginTop: '7%',
   },
 
   buttonContainer: {
