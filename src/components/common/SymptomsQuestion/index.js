@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Image, SafeAreaView, Text, StatusBar } from 'react-native';
+import { View, Image, SafeAreaView, Text } from 'react-native';
 import { getGenericQuestionImage } from 'utils/helpers';
 
 import BackButton from 'components/common/BackButton';
@@ -10,7 +10,6 @@ import onboardingBubble from 'images/onboardingBubble.png';
 import { bool, func, string } from 'prop-types';
 import { useSelector } from 'react-redux';
 import { ONBOARDING_STEPS_NUMBER } from 'constants/app';
-import { BACKGROUND_COLOR } from 'constants/styles';
 import styles from './styles';
 
 const SymptomsQuestion = ({ questionType, onPressNo, onPressYes, backButton = true }) => {
@@ -25,7 +24,6 @@ const SymptomsQuestion = ({ questionType, onPressNo, onPressYes, backButton = tr
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={BACKGROUND_COLOR} />
       {backButton && <BackButton containerStyle={styles.backButton} />}
       <View style={styles.scrollContainer}>
         <View>
