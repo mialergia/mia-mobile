@@ -18,6 +18,7 @@ export const PDFS_SCREEN = 'PDFS_SCREEN';
 export const PROJECT_INFO_SCREEN = 'PROJECT_INFO_SCREEN';
 export const RATE_PROJECT_SCREEN = 'RATE_PROJECT_SCREEN';
 export const PDF_VIEWER = 'PDF_VIEWER';
+export const FIRST_TIME_SCREEN = 'FIRST_TIME_SCREEN';
 
 export const APP_STACK = 'AppStack';
 export const AUTH_STACK = 'AuthStack';

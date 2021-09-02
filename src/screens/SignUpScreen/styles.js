@@ -1,44 +1,40 @@
 import { StyleSheet } from 'react-native';
 
-import { WHITE } from 'constants/styles';
+import { GREEN } from 'constants/styles';
 
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
-    width: '100%',
-    position: 'absolute',
+    flex: 1,
   },
-
-  scrollView: {
+  scrollContainer: {
     flexGrow: 1,
+    justifyContent: 'space-between',
+    marginTop: 180,
   },
-
-  welcome: {
-    color: WHITE,
+  title: {
+    color: GREEN,
     fontWeight: 'bold',
     fontSize: 27,
     textAlign: 'center',
-    marginTop: '10%',
   },
-
   headerImage: {
     width: '100%',
-    height: '30%',
+    position: 'absolute',
   },
-
-  appIcon: {
-    alignSelf: 'center',
-    height: '23%',
-    marginTop: '7%',
-  },
-
   buttonContainer: {
     height: 40,
     width: '50%',
   },
-
   formContainer: {
-    flex: 1,
+    marginTop: 20,
+  },
+  alreadySignedButton: {},
+  alreadySignedText: {
+    fontSize: 16,
+    color: GREEN,
+    fontWeight: '700',
+    marginLeft: 15,
+    marginBottom: 15,
   },
 });
 

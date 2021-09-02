@@ -7,13 +7,12 @@ import strings from 'locale';
 import { useDispatch } from 'react-redux';
 
 import SignUpForm from 'components/SignUpForm';
-import appIcon from 'images/signup.png';
-import headerImage from 'images/header.png';
-import Button from 'components/common/Button';
+import signUpHeader from 'images/signUpHeader.png';
 import ErrorView from 'components/common/ErrorView';
 import { EMAIL_SENT_MODAL, LOGIN_SCREEN, TERMS_AND_CONDITIONS } from 'constants/screens';
 import DeepLink from 'components/DeepLink';
 import { resendVerificationEmail, signUp } from 'actions/userActions';
+import TouchableText from 'components/common/TouchableText';
 import styles from './styles';
 
 const SignUpScreen = memo(({ navigation }) => {
@@ -44,27 +43,30 @@ const SignUpScreen = memo(({ navigation }) => {
     [navigation],
   );
 
+  const navigateToLoginScreen = () => navigation.navigate(LOGIN_SCREEN);
+
   return (
     <>
       <DeepLink />
-      <Image source={headerImage} style={styles.headerImage} resizeMode="stretch" />
+      <Image source={signUpHeader} style={styles.headerImage} resizeMode="stretch" />
       <SafeAreaView style={styles.container}>
         <KeyboardAwareScrollView
-          contentContainerStyle={styles.scrollView}
           enableOnAndroid
-          keyboardShouldPersistTaps="always">
-          <Text style={styles.welcome}>{strings.SIGN_UP.title}</Text>
-          <Image source={appIcon} style={styles.appIcon} resizeMode="contain" />
-          <View style={styles.formContainer}>
-            <SignUpForm onSubmit={signUpRequest} />
-            <Button
-              title={strings.SIGN_UP.logInButton}
-              onPress={() => navigation.navigate(LOGIN_SCREEN)}
-              inverseStyle
-              containerStyle={styles.buttonContainer}
-            />
-            {error && <ErrorView errors={{ error: strings.COMMON.somethingWentWrong }} />}
+          keyboardShouldPersistTaps="always"
+          contentContainerStyle={styles.scrollContainer}>
+          <View>
+            <Text style={styles.title}>{strings.SIGN_UP.title}</Text>
+            <View style={styles.formContainer}>
+              <SignUpForm onSubmit={signUpRequest} />
+              {error && <ErrorView errors={{ error: strings.COMMON.somethingWentWrong }} />}
+            </View>
           </View>
+          <TouchableText
+            containerStyle={styles.alreadySignedButton}
+            textStyle={styles.alreadySignedText}
+            text={strings.COMMON.alreadySigned}
+            onPress={navigateToLoginScreen}
+          />
         </KeyboardAwareScrollView>
       </SafeAreaView>
     </>
