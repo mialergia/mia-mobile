@@ -6967,6 +6967,11 @@ react-native-screens@^2.0.0-beta.2:
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-2.16.1.tgz#b105a127378d90018a46daf0c2f6518fca60c06f"
   integrity sha512-WZ7m0sBDVaHbBnlHxwQnUlI6KNfQKHq+Unfw+VBuAlnSXvT+aw6Bb/K2bUlHzBgvrPjwY3Spc7ZERFuTwRLLwg==
 
+react-native-store-review@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-store-review/-/react-native-store-review-0.2.0.tgz#82796f5ed0926f6ce304452d652afbcf8a492b47"
+  integrity sha512-YQmRZVAVfUNG1D7SH77K9RuUd3prQHCetCqhTnzkhunLBwfx89cGuskYxXhtIZP5ZwgcHro4SiNlv9pEvuPJpQ==
+
 react-native-svg@^12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.0.tgz#acfe48c35cd5fca3d5fd767abae0560c36cfc03d"

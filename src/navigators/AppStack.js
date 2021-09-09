@@ -2,6 +2,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ActionSheetProvider } from '@expo/react-native-action-sheet';
+import * as StoreReview from 'react-native-store-review';
 
 import {
   SYMPTOMS_QUESTIONNAIRE,
@@ -42,6 +43,10 @@ import styles from './styles';
 
 const Stack = createStackNavigator();
 
+if (StoreReview.isAvailable) {
+  // This API is only available on iOS >= 10.3 or Android API >= 21
+  StoreReview.requestReview();
+}
 const AppStack = () => {
   const {
     user: { necesitaOnboarding, nombre },
