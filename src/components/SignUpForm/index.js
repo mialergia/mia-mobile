@@ -13,8 +13,8 @@ import useTextInputProps from 'hooks/useTextInputProps';
 import signUpValidations from 'validations/signUpValidations';
 import ErrorView from 'components/common/ErrorView';
 import Button from 'components/common/Button';
-import LinkText from 'components/common/LinkText';
 import { RESEND_VERIFICATION_EMAIL } from 'constants/screens';
+import TouchableText from 'components/common/TouchableText';
 import styles, { buttonContainerStyle } from './styles';
 
 const FIELDS = {
@@ -37,6 +37,11 @@ const SignUpForm = ({ onSubmit }) => {
   );
 
   const inputProps = useTextInputProps(handleValueChange, handleBlur, values);
+
+  const onResendEmailPressed = () =>
+    navigation.navigate(RESEND_VERIFICATION_EMAIL, {
+      emailAdded: values[FIELDS.email],
+    });
 
   return (
     <View style={styles.container}>
@@ -63,21 +68,21 @@ const SignUpForm = ({ onSubmit }) => {
           testID="confirm-password-input"
           {...inputProps(FIELDS.password2)}
         />
-        <LinkText
-          onPress={() =>
-            navigation.navigate(RESEND_VERIFICATION_EMAIL, { emailAdded: values[FIELDS.email] })
-          }
-          text={strings.SIGN_UP.resendEmail}
-          containerStyle={styles.resendEmail}
-        />
       </View>
-      <View>
+      <View style={styles.buttonsContainer}>
         <ErrorView errors={{ ...errors, error }} />
         <Button
           containerStyle={buttonContainerStyle}
           title={strings.COMMON.continue}
           onPress={handleSubmit}
           loading={status === LOADING}
+        />
+        <TouchableText
+          onPress={onResendEmailPressed}
+          text={strings.SIGN_UP.resendEmail}
+          containerStyle={styles.resendEmailButton}
+          textStyle={styles.resendEmailText}
+          underline
         />
       </View>
     </View>

@@ -9,8 +9,10 @@ import {
   RESET_PASSWORD_MODAL,
   TERMS_AND_CONDITIONS,
   RESEND_VERIFICATION_EMAIL,
+  FIRST_TIME_SCREEN,
 } from 'constants/screens';
 
+import FirstTimeScreen from 'screens/FirstTimeScreen';
 import LoginScreen from 'screens/LoginScreen';
 import SignUpScreen from 'screens/SignUpScreen';
 import { WHITE } from 'constants/styles';
@@ -23,6 +25,7 @@ const Stack = createStackNavigator();
 
 const AuthStack = () => (
   <Stack.Navigator screenOptions={{ headerShown: false, cardStyle: { backgroundColor: WHITE } }}>
+    <Stack.Screen name={FIRST_TIME_SCREEN} component={FirstTimeScreen} />
     <Stack.Screen name={LOGIN_SCREEN} component={LoginScreen} />
     <Stack.Screen name={SIGN_UP_SCREEN} component={SignUpScreen} />
   </Stack.Navigator>

@@ -18,7 +18,7 @@ export const DARK_RED = '#D94848';
 export const PASTEL_RED = '#FFE0D9';
 
 // GREENS
-export const GREEN = '#00A07D';
+export const GREEN = '#35524D';
 export const DARK_GREEN = '#265E54';
 export const LIGHT_GREEN = '#83A59F';
 

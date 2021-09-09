@@ -18,13 +18,19 @@ export default {
     openSettings: 'Abrir ajustes',
     emptyFieldError: '{0} no puede ser vacío.',
     email: 'Email',
+    alreadySigned: 'Ya tengo una cuenta',
+  },
+
+  FIRST_TIME_SCREEN: {
+    title: '¿Primera vez en\nMIA?',
+    button: 'Empecemos!',
   },
 
   LOG_IN: {
     title: 'Bienvenido!',
     email: 'Email',
     password: 'Contraseña',
-    resetPasswordButton: 'Resetear contraseña',
+    resetPasswordButton: 'Olvidé mi contraseña',
     logInButton: 'Iniciar sesión',
     signUpButton: 'Crear cuenta',
   },
@@ -70,12 +76,12 @@ export default {
   },
 
   SIGN_UP: {
-    title: 'Registro',
+    title: 'Crear nueva cuenta',
     email: 'Email',
     password: 'Contraseña',
     passwordConfirmation: 'Repetir contraseña',
     logInButton: 'Iniciar sesión',
-    signUpButton: 'Registrarme',
+    signUpButton: 'Crear cuenta',
     emailAction: 'confirmar tu cuenta.',
     termsAndConditionsTitle: 'Sobre el proyecto',
     resendEmail: 'Reenviar mail de verificación',

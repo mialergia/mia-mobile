@@ -1,3 +1,4 @@
+import { GREEN } from 'constants/styles';
 import { StyleSheet } from 'react-native';
 
 export const buttonContainerStyle = {
@@ -12,12 +13,20 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   container: {
-    flex: 0.3,
     marginHorizontal: '8%',
     justifyContent: 'space-between',
   },
-  resendEmail: {
-    marginTop: 15,
+  resendEmailButton: {
+    marginTop: -25,
+    alignSelf: 'center',
+  },
+  resendEmailText: {
+    fontSize: 19,
+    color: GREEN,
+    marginTop: 20,
+  },
+  buttonsContainer: {
+    marginTop: 35,
   },
 });
 
